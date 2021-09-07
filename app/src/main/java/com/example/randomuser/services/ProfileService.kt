@@ -2,6 +2,8 @@
 package com.example.randomuser.services
 //------------------------------------------------------------- Imports
 import android.content.Context
+import android.widget.Toast
+import com.example.randomuser.R
 import com.example.randomuser.profile.model.User
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -22,6 +24,9 @@ class ProfileService @Inject constructor(
             call.body()?.let { response ->
                 return response
             }
+        } else {
+            val messageError = context.resources.getString(R.string.error_contact_server)
+            Toast.makeText(context, messageError, Toast.LENGTH_SHORT).show()
         }
 
         return null

@@ -19,18 +19,29 @@ class ProfileViewModel @javax.inject.Inject constructor(
     private val repository: ProfileRepository
 ) : ViewModel() {
     //------------------------------------------------------ Variables
-    private val _profileResponse = MutableLiveData<Resource<User>>()
-    val profileResponse: LiveData<Resource<User>> = _profileResponse
+    private val _profileResponse = MutableLiveData<User>()
+    val profileResponse: LiveData<User> = _profileResponse
+
+    val enableInputs = MutableLiveData<Boolean>()
+    val progressBar = MutableLiveData<Boolean>()
+    val errorUser = MutableLiveData<String>()
     //------------------------------------------------------ Methods
     fun getRandomUser() {
-        viewModelScope.launch {
-            _profileResponse.value = Resource.Loading
+        progressBar.postValue(true)
+        enableInputs.postValue(false)
 
+        viewModelScope.launch {
             when(val response = repository.getRandomUser()) {
                 is Resource.Success -> {
-                    _profileResponse.postValue(response as Resource<User>?)
+                    _profileResponse.postValue(response.data!!)
+                    progressBar.postValue(false)
+                    enableInputs.postValue(true)
                 }
-                is Resource.Failure<*> -> _profileResponse.value = response
+                is Resource.Failure<*> -> {
+                    errorUser.value = "error"
+                    progressBar.postValue(false)
+                    enableInputs.postValue(true)
+                }
             }
         }
     }
