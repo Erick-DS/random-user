@@ -1,6 +1,6 @@
 package com.example.randomuser.services
 
-import com.example.randomuser.profile.model.User
+import com.example.randomuser.profile.model.UserList
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -16,5 +16,5 @@ interface ApiClient {
      */
     @Headers("Accept: application/json", "Content-type:application/json")
     @GET("api/")
-    suspend fun getRandom(): Response<User>
+    suspend fun getRandom(): Response<UserList>
 }

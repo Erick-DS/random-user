@@ -1,7 +1,7 @@
 //-------------------------------------------------------------- Profile Repository
 package com.example.randomuser.profile.repository
 //-------------------------------------------------------------- imports
-import com.example.randomuser.profile.model.User
+import com.example.randomuser.profile.model.UserList
 import com.example.randomuser.services.ProfileService
 import com.example.randomuser.utils.Resource
 import java.lang.Exception
@@ -14,7 +14,7 @@ class ProfileRepository @Inject constructor(
     private val profileService: ProfileService
 ) {
     //----------------------------------------------------------- Methods
-    suspend fun getRandomUser(): Resource<User?> {
+    suspend fun getRandomUser(): Resource<UserList?> {
         return try {
             val response = profileService.getRandomUser()
             Resource.Success(response)

@@ -10,7 +10,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import com.example.randomuser.databinding.FragmentProfileBinding
-import com.example.randomuser.profile.model.User
+import com.example.randomuser.profile.model.UserList
 import com.example.randomuser.profile.viewmodel.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -67,7 +67,7 @@ class ProfileFragment : Fragment() {
         })
     }
 
-    private fun displayUserData(response: User) {
+    private fun displayUserData(response: UserList) {
         val user = response.results.first()
         val name = user.name.first +" "+ user.name.last
 

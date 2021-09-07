@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.randomuser.profile.model.User
+import com.example.randomuser.profile.model.UserList
 import com.example.randomuser.profile.repository.ProfileRepository
 import com.example.randomuser.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,8 +19,8 @@ class ProfileViewModel @javax.inject.Inject constructor(
     private val repository: ProfileRepository
 ) : ViewModel() {
     //------------------------------------------------------ Variables
-    private val _profileResponse = MutableLiveData<User>()
-    val profileResponse: LiveData<User> = _profileResponse
+    private val _profileResponse = MutableLiveData<UserList>()
+    val profileResponse: LiveData<UserList> = _profileResponse
 
     val enableInputs = MutableLiveData<Boolean>()
     val progressBar = MutableLiveData<Boolean>()

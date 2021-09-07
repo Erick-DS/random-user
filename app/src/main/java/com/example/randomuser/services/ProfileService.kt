@@ -4,7 +4,7 @@ package com.example.randomuser.services
 import android.content.Context
 import android.widget.Toast
 import com.example.randomuser.R
-import com.example.randomuser.profile.model.User
+import com.example.randomuser.profile.model.UserList
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ class ProfileService @Inject constructor(
     private val apiClient: ApiClient
     ) {
     //----------------------------------------------------------- Constants
-    suspend fun getRandomUser(): User? {
+    suspend fun getRandomUser(): UserList? {
         val call = apiClient.getRandom()
         call.body()
 
