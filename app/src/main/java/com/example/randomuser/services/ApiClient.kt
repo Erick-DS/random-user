@@ -12,7 +12,7 @@ interface ApiClient {
         const val BASE_URL = "https://randomuser.me/"
     }
     /**
-     * Service to get random user from an endpoint
+     * Service GET method to get random user from endpoint
      */
     @Headers("Accept: application/json", "Content-type:application/json")
     @GET("api/")
