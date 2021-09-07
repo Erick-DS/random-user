@@ -1,5 +1,6 @@
+//---------------------------------------------------------- Profile View Model
 package com.example.randomuser.profile.viewmodel
-
+//---------------------------------------------------------- Imports
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,6 +11,9 @@ import com.example.randomuser.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 
+/**
+ * Profile View Model
+ */
 @HiltViewModel
 class ProfileViewModel @javax.inject.Inject constructor(
     private val repository: ProfileRepository

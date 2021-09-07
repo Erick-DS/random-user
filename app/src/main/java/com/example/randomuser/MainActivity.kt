@@ -1,10 +1,14 @@
+//--------------------------------------------------------------- Main Activity
 package com.example.randomuser
-
+//--------------------------------------------------------------- Imports
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.randomuser.profile.view.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * Main Activity to host fragments
+ */
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     //----------------------------------------------------------- Constructor
