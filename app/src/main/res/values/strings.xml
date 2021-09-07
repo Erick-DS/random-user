@@ -5,10 +5,14 @@
     <string name="error_contact_server">Error contact server</string>
     <string name="get_random_user">Get random user</string>
     <string name="user_name">User name</string>
-    <string name="user_gender_label">"Gender: "</string>
+    <string name="user_gender_label">Gender: </string>
     <string name="user_gender">User gender</string>
-    <string name="user_age_label">"Age: "</string>
+    <string name="user_age_label">Age: </string>
     <string name="user_age">User age</string>
     <string name="user_id">Id</string>
-    <string name="user_id_label">"Id: "</string>
+    <string name="user_id_label">Id: </string>
+    <string name="user_city">City</string>
+    <string name="user_city_label">City:</string>
+    <string name="user_country_label">Country: </string>
+    <string name="user_country">Country</string>
 </resources>
